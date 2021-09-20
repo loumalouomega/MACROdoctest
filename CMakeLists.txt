@@ -10,6 +10,9 @@ SET(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Include the doctest library
 ADD_SUBDIRECTORY(src)
 
+# Define building test
+ENABLE_TESTING()
+
 # Iterate over the MACRO_DOCTEST_TEST_SOURCES
 SET(CPP_TEST_FILE "test/doctest_checks.cpp")
 GET_FILENAME_COMPONENT(CPP_TEST_FILE ${CPP_TEST_FILE} REALPATH)
