@@ -74,7 +74,7 @@
 
 #define COMMON_MESSAGE_CHECK "Check failed in file" << __FILE__ << " in line " << __LINE__
 
-#define DOCTEST_CHECK(IsTrue) if(!(IsTrue)) std::cout << COMMON_MESSAGE_CHECK << " because " << #IsTrue << " is not true" << std::endl; CHECK(IsTrue);
+#define DOCTEST_CHECK_IS_TRUE(IsTrue) if(!(IsTrue)) std::cout << COMMON_MESSAGE_CHECK << " because " << #IsTrue << " is not true" << std::endl; CHECK(IsTrue);
 #define DOCTEST_CHECK_IS_FALSE(IsFalse) if(IsFalse) std::cout << COMMON_MESSAGE_CHECK << " because " << #IsFalse << " is not false" << std::endl; CHECK(!IsFalse);
 
 #define DOCTEST_CHECK_EQUAL(a,b) if(!((a) == (b))) std::cout << COMMON_MESSAGE_CHECK << " because " << #a << " is not equal to " << #b << std::endl; CHECK(a == b);
