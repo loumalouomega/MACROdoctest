@@ -1,6 +1,8 @@
 name: CI
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
     paths:
     - 'src/**'
@@ -12,11 +14,6 @@ on:
 jobs:
   ubuntu-nightly:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    container:
-      image: frolvlad/alpine-gxx
-      options: --user 1001
     steps:
     - name: Build
       shell: bash
@@ -26,5 +23,4 @@ jobs:
         make install
     - name: Test
       shell: bash
-      run: |
-        ctest
+      run: ctest
