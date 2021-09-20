@@ -22,7 +22,7 @@
 class Matrix
 {
 public:
-    Matrix(int rows, int cols) : rows_(rows), cols_(cols)
+    Matrix(int rows, int cols, double value) : rows_(rows), cols_(cols)
     {
         p = new double*[rows_];
         for (int i = 0; i < rows_; ++i) {
@@ -30,7 +30,7 @@ public:
         }
         for (int i = 0; i < rows_; ++i) {
             for (int j = 0; j < cols_; ++j) {
-                p[i][j] = 0;
+                p[i][j] = value;
             }
         }
     }
@@ -45,9 +45,9 @@ public:
 
     inline double& operator()(int x, int y) { return p[x][y]; }
 
-    inline int& size1() {return rows_};
+    inline int& size1() {return rows_;}
 
-    inline int& size2() {return cols_};
+    inline int& size2() {return cols_;}
 
 private:
     int rows_, cols_;
