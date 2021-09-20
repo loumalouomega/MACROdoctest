@@ -109,7 +109,7 @@ std::cout << COMMON_MESSAGE_CHECK << " because vector arguments do not have the 
 << "second argument has size " << b.size() << "." << std::endl;                                \
 }                                                                                              \
 CHECK(a.size() == b.size());                                                                   \
-for (std::size_t i = 0; i < a.size(); i++) {                                                   \FELISCE
+for (std::size_t i = 0; i < a.size(); i++) {                                                   \
    if( std::abs(a[i] - b[i]) > tolerance ) {                                                   \
       std::cout << "Check failed because vector " << #a << " is not near to vector " << #b     \
       << "\nMismatch found in component " << i << ":" << std::endl                             \

@@ -37,6 +37,10 @@
 # Backup files
 *.bak
 
+# Common build directory
+build/*
+bin/*
+
 # Most used editor files
 *.vscode
 *.directory
