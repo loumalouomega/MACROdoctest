@@ -1,6 +1,6 @@
 # MACROdoctest
 
-<p align=center><src="https://raw.githubusercontent.com/loumalouomega/MACROdoctest/09f1959a81dfa1c9e17f5cd2f6d7933eaf4692a6/docs/logo.svg"></p>
+![](docs/logo.svg)
 
 [![Release][release-image]][releases] [![License][license-image]][license] [![CI](https://github.com/loumalouomega/MACROdoctest/actions/workflows/ci.yml/badge.svg)](https://github.com/loumalouomega/MACROdoctest/actions/workflows/ci.yml)
 
