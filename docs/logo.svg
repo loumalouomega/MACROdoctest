@@ -10,11 +10,11 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xml:space="preserve"
-   width="106.23398mm"
-   height="40.169167mm"
+   width="106.49856mm"
+   height="40.43375mm"
    version="1.1"
    style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-   viewBox="0 0 4918.1808 1859.794"
+   viewBox="0 0 4930.4297 1872.044"
    id="svg29"
    sodipodi:docname="logo.svg"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"><metadata
@@ -37,9 +37,9 @@
    fit-margin-left="0"
    fit-margin-right="0"
    fit-margin-bottom="0"
-   inkscape:zoom="1.5647993"
-   inkscape:cx="206.43952"
-   inkscape:cy="66.978926"
+   inkscape:zoom="2.2129604"
+   inkscape:cx="68.778608"
+   inkscape:cy="71.268539"
    inkscape:window-x="2325"
    inkscape:window-y="468"
    inkscape:window-maximized="0"
@@ -62,18 +62,19 @@
  </defs>
  <text
    xml:space="preserve"
-   style="font-style:normal;font-weight:normal;font-size:489.99819946px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.24995518"
-   x="-0.15155834"
-   y="609.77557"
+   style="font-style:normal;font-weight:normal;font-size:489.99819946px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:24.49991035;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   x="12.159011"
+   y="622.02551"
    id="text845"><tspan
      sodipodi:role="line"
      id="tspan843"
-     x="-0.15155834"
-     y="609.77557"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:783.99713135px;font-family:'ProFontIIx Nerd Font';-inkscape-font-specification:'ProFontIIx Nerd Font';stroke-width:12.24995518">MACR0</tspan></text>
+     x="12.159011"
+     y="622.02551"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:783.99713135px;font-family:'ProFontIIx Nerd Font';-inkscape-font-specification:'ProFontIIx Nerd Font';fill:#000000;stroke:#ffffff;stroke-width:24.49991035;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">MACR0</tspan></text>
+
 <g
    id="Capa_x0020_1"
-   transform="translate(667.38,300.6637)">
+   transform="translate(679.69057,312.91362)">
   <metadata
    id="CorelCorpID_0Corel-Layer" />
   <path
