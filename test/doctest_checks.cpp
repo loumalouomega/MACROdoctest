@@ -138,6 +138,27 @@ TEST_SUITE("DoctestChecks")
         const std::vector<double> ref(3, 1.0);
         DOCTEST_CHECK_VECTOR_EQUAL(value, ref);
     }
+
+    TEST_CASE("DOCTEST_CHECK_MATRIX_NEAR")
+    {
+        Matrix value(3, 3, 1.0);
+        Matrix ref(3, 3, 0.991);
+        DOCTEST_CHECK_MATRIX_NEAR(value, ref, 1.0e-2);
+    }
+
+    TEST_CASE("DOCTEST_CHECK_MATRIX_RELATIVE_NEAR")
+    {
+        Matrix value(3, 3, 1.0);
+        Matrix ref(3, 3, 1.009);
+        DOCTEST_CHECK_MATRIX_RELATIVE_NEAR(value, ref, 1.0e-2);
+    }
+
+    TEST_CASE("DOCTEST_CHECK_MATRIX_EQUAL")
+    {
+        Matrix value(3, 3, 1.0);
+        Matrix ref(3, 3, 1.0);
+        DOCTEST_CHECK_MATRIX_EQUAL(value, ref);
+    }
 }
 
 ADD_DOCTEST_TEST
