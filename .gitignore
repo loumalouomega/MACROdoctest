@@ -1,0 +1,46 @@
+### ATTENTION ###
+# This is the GLOBAL gitignore, please do NOT change this file,
+# unless it should be available for everyone
+# Please change the LOCAL gitignore (.git/info/exclude) to customize
+# excluding files/folders from being recognized by git
+
+# Recovery files
+*~
+
+# Auxiliar out files
+*.aux
+*.out
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+*.pyc
+*.pyd
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Backup files
+*.bak
+
+# Most used editor files
+*.vscode
+*.directory
+*.DS_Store
+
+# SonnarQube auxiliar folder
+*.scannerwork

@@ -1,0 +1,40 @@
+SET(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+# Generate variables with the sources
+SET(DOCTEST_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/doctest/doctest/parts/doctest.cpp)
+
+# Compile library
+ADD_LIBRARY(doctest SHARED ${DOCTEST_SOURCES})
+TARGET_LINK_LIBRARIES(doctest m)
+
+# Define include and library
+SET(DOCTEST_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+SET(DOCTEST_LIBRARIES doctest)
+
+# Describe the global includes as a property
+DEFINE_PROPERTY(GLOBAL PROPERTY GLOBAL_DOCTEST_INCLUDE_DIR
+    BRIEF_DOCS "Global doctest includes"
+    FULL_DOCS "Global doctest includes")
+# Initialize property
+SET_PROPERTY(GLOBAL PROPERTY GLOBAL_DOCTEST_INCLUDE_DIR ${DOCTEST_INCLUDE_DIR})
+
+# Describe the global libraries as a property
+DEFINE_PROPERTY(GLOBAL PROPERTY GLOBAL_DOCTEST_LIBRARIES
+    BRIEF_DOCS "Global doctest libraries"
+    FULL_DOCS "Global doctest libraries")
+# Initialize property
+SET_PROPERTY(GLOBAL PROPERTY GLOBAL_DOCTEST_LIBRARIES ${DOCTEST_LIBRARIES})
+
+# Installing
+INSTALL(TARGETS ${DOCTEST_LIBRARIES} DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+IF(${INSTALL_FELISCE_SYSTEM})
+    IF(${OS_NAME} MATCHES "Linux")
+        SET(SYSTEM_LIBS_INSTALL_FOLDER "/usr/local/lib")
+    ELSEIF(${OS_NAME} MATCHES "Darwin")
+        SET(SYSTEM_LIBS_INSTALL_FOLDER "/usr/local/lib")
+    ENDIF(${OS_NAME} MATCHES "Linux")
+    INSTALL(TARGETS ${DOCTEST_LIBRARIES} DESTINATION ${SYSTEM_LIBS_INSTALL_FOLDER} COMPONENT libraries)
+ENDIF(${INSTALL_FELISCE_SYSTEM})
+
+# Printing a message
+MESSAGE(STATUS "doctest : ${DOCTEST_INCLUDE_DIR}" )
