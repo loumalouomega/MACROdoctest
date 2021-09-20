@@ -10,9 +10,11 @@
 //
 
 // System includes
+#include <vector>
 
 // External includes
 #include "doctest_checks.h"
+#include "matrix.h"
 
 // Project includes
 
@@ -114,6 +116,27 @@ TEST_SUITE("DoctestChecks")
     {
         const double value = 1.0;
         DOCTEST_CHECK_DOUBLE_EQUAL(value, 1.0);
+    }
+
+    TEST_CASE("DOCTEST_CHECK_VECTOR_NEAR")
+    {
+        const std::vector<double> value(3, 1.0);
+        const std::vector<double> ref(3, 0.991);
+        DOCTEST_CHECK_VECTOR_NEAR(value, ref, 1.0e-2);
+    }
+
+    TEST_CASE("DOCTEST_CHECK_VECTOR_RELATIVE_NEAR")
+    {
+        const std::vector<double> value(3, 1.0);
+        const std::vector<double> ref(3, 1.009);
+        DOCTEST_CHECK_VECTOR_RELATIVE_NEAR(value, ref, 1.0e-2);
+    }
+
+    TEST_CASE("DOCTEST_CHECK_VECTOR_EQUAL")
+    {
+        const std::vector<double> value(3, 1.0);
+        const std::vector<double> ref(3, 1.0);
+        DOCTEST_CHECK_VECTOR_EQUAL(value, ref);
     }
 }
 
