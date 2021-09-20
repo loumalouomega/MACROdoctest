@@ -62,6 +62,9 @@ TEST_SUITE("MyTestSuite")
     }
 ...
 }
+
+
+ADD_DOCTEST_TEST
 ~~~
 
 The macros predefined in `doctest_checks.h`are:
