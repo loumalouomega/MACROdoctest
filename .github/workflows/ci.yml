@@ -8,8 +8,6 @@ on:
   schedule:
     - cron:  '0 1 * * *'
 
-  [push]
-
 jobs:
   ubuntu-nightly:
     runs-on: ubuntu-latest
