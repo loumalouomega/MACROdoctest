@@ -28,7 +28,7 @@ In order to to use compile the library and be able to use it inside your project
 
 ~~~cmake
 # Include the doctest library
-ADD_SUBDIRECTORY( *doctest_src_folder* )
+ADD_SUBDIRECTORY( *MACROdoctest_src_folder* )
 ~~~
 
 Therefore, in the *CMakeLists.txt* where your unnitests are defined:
