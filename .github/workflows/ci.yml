@@ -18,6 +18,8 @@ jobs:
     - name: Build
       shell: bash
       run: |
+        pwd
+        ls
         mkdir build
         cp scripts/configure.sh build
         cd build
