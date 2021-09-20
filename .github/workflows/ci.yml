@@ -18,9 +18,10 @@ jobs:
     - name: Build
       shell: bash
       run: |
-        cmake .
-        make
-        make install
+        mkdir build
+        cp scripts/configure.sh build
+        cd build
+        sh configure.sh
     - name: Test
       shell: bash
       run: ctest
