@@ -9,4 +9,4 @@ export FOLDER_BUILD="${FOLDER_SOURCE}/build"
 
 # Configure
 cmake --no-warn-unused-cli ..
-cmake --build "${FOLDER_BUILD}" --target install -- -j$(nproc)
+cmake --build "${FOLDER_BUILD}" -- -j$(nproc)
