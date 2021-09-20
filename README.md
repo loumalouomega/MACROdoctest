@@ -2,16 +2,13 @@
 
 <p align=center><src="docs/logo.svg"></p>
 
-[![Release][release-image]][releases] [![License][license-image]][license] [![Github CI][Nightly-Build]][Nightly-link]
+[![Release][release-image]][releases] [![License][license-image]][license] [![CI](https://github.com/loumalouomega/MACROdoctest/actions/workflows/ci.yml/badge.svg)](https://github.com/loumalouomega/MACROdoctest/actions/workflows/ci.yml)
 
 [release-image]: https://img.shields.io/badge/release-1.0-green.svg?style=flat
 [releases]: https://github.com/loumalouomega/MACROdoctest/releases
 
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
 [license]: https://github.com/loumalouomega/MACROdoctest/blob/main/LICENSE
-
-[Nightly-Build]: https://github.com/loumalouomega/MACROdoctest/workflows/Nightly%20Build/badge.svg
-[Nightly-link]: https://github.com/loumalouomega/MACROdoctest/actions?query=workflow%3A%22Nightly+Build%22
 
 A set of macros that help to create simple tests using [doctest](https://github.com/onqtam/doctest).
 
