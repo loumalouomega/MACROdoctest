@@ -5,7 +5,7 @@
 Download this repository with:
 
 ~~~sh
-https://github.com/loumalouomega/MACROdoctest.git
+git https://github.com/loumalouomega/MACROdoctest.git
 ~~~
 
 ### Building
