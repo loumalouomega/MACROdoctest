@@ -1,37 +1,97 @@
-## Welcome to GitHub Pages
+## Installation
 
-You can use the [editor on GitHub](https://github.com/loumalouomega/MACROdoctest/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### Download
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Download this repository with:
 
-### Markdown
+~~~sh
+https://github.com/loumalouomega/MACROdoctest.git
+~~~
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Building
 
-```markdown
-Syntax highlighted code block
+In order to to use compile the library and be able to use it inside your project, copy the files (or generate a *git* submodule) in a folder below the root folder of the project and add the following to your *CMakeLists.txt*:
 
-# Header 1
-## Header 2
-### Header 3
+~~~cmake
+# Include the doctest library
+ADD_SUBDIRECTORY( *MACROdoctest_src_folder* )
+~~~
 
-- Bulleted
-- List
+Therefore, in the *CMakeLists.txt* where your unnitests are defined:
 
-1. Numbered
-2. List
+~~~cmake
+# Retrieving doctest library
+GET_PROPERTY(DOCTEST_INCLUDE_DIR GLOBAL PROPERTY GLOBAL_DOCTEST_INCLUDE_DIR)
+GET_PROPERTY(DOCTEST_LIBRARIES GLOBAL PROPERTY GLOBAL_DOCTEST_LIBRARIES)
+~~~
 
-**Bold** and _Italic_ and `Code` text
+Then these include and libraries must be considered in the test binary definition:
 
-[Link](url) and ![Image](src)
-```
+~~~cmake
+# Compile the test
+ADD_EXECUTABLE(TestBinaryName "${CPP_TEST_FILES}")
+TARGET_INCLUDE_DIRECTORIES(TestBinaryName PUBLIC ${DOCTEST_INCLUDE_DIR} ${OTHER_INCLUDES})
+TARGET_LINK_LIBRARIES(TestBinaryName PRIVATE ${DOCTEST_LIBRARIES} ${OTHER_LIBRARIES})
+~~~
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+You can see the *test* folder of this repository as a template of how to properly use it.
 
-### Jekyll Themes
+## Usage
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/loumalouomega/MACROdoctest/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+In order to define an unnitest with the library you need to do the corresponding include:
 
-### Support or Contact
+~~~c++
+#include "doctest_checks.h"
+~~~
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Then the definition of the tests suites and tests cases follow the [doctest](https://github.com/onqtam/doctest) standard:
+
+~~~c++
+TEST_SUITE("MyTestSuite")
+{
+    TEST_CASE("TestCase")
+    {
+        const bool value = true;
+        DOCTEST_CHECK_IS_TRUE(value);
+    }
+...
+}
+
+
+ADD_DOCTEST_TEST
+~~~
+
+The macros predefined in `doctest_checks.h`are:
+
+- `DOCTEST_CHECK_IS_TRUE`: Checks if the returning value is true.
+- `DOCTEST_CHECK_IS_FALSE`: Checks if the returning value is false.
+- `DOCTEST_CHECK_EQUAL`: Checks if the two values are equal.
+- `DOCTEST_CHECK_NOT_EQUAL`: Checks if the two values are not equal.
+- `DOCTEST_CHECK_STRING_EQUAL`: Checks if the two strings are equal.
+- `DOCTEST_CHECK_STRING_NOT_EQUAL`: Checks if the two strings are not equal.
+- `DOCTEST_CHECK_C_STRING_EQUAL`: Checks if the two C strings are equal.
+- `DOCTEST_CHECK_C_STRING_NOT_EQUAL`: Checks if the two C strings are not equal.
+- `DOCTEST_CHECK_STRING_CONTAIN_SUB_STRING`: Checks if the first string constains a substring of the second one.
+- `DOCTEST_CHECK_LESS`: Checks if the first value is lesser than the second one.
+- `DOCTEST_CHECK_LESS_EQUAL`: Checks if the first value is lesser or equal than the second one.
+- `DOCTEST_CHECK_GREATER`: Checks if the first value is greater than the second one.
+- `DOCTEST_CHECK_GREATER_EQUAL`: Checks if the first value is greater or equal than the second one.
+- `DOCTEST_CHECK_NEAR`: Checks if the two values are near by a certain tolerance.
+- `DOCTEST_CHECK_RELATIVE_NEAR`: Checks if the two values are relatively near by a certain tolerance.
+- `DOCTEST_CHECK_DOUBLE_EQUAL`: Checks if the two values are near by a numerical precission tolerance.
+- `DOCTEST_CHECK_VECTOR_NEAR`: Checks if the two vectors are near by a certain tolerance.
+- `DOCTEST_CHECK_VECTOR_RELATIVE_NEAR`: Checks if the two vectors are relatively near by a certain tolerance.
+- `DOCTEST_CHECK_VECTOR_EQUAL`: Checks if the two vectors are near by a numerical precission tolerance.
+- `DOCTEST_CHECK_MATRIX_NEAR`: Checks if the two matrices are near by a certain tolerance.
+- `DOCTEST_CHECK_MATRIX_RELATIVE_NEAR`: Checks if the two matrices are relatively near by a certain tolerance.
+- `DOCTEST_CHECK_MATRIX_EQUAL`: Checks if the two matrices are near by a numerical precission tolerance.
+
+**Do not forget to add the corresponding macro at the end of the test file in order to generate the executable:**
+
+~~~c++
+...
+    }
+}
+
+ADD_DOCTEST_TEST
+~~~
