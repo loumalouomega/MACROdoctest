@@ -19,7 +19,7 @@ A set of macros that help to create simple tests using [doctest](https://github.
 Download this repository with:
 
 ~~~sh
-https://github.com/loumalouomega/MACROdoctest.git
+git https://github.com/loumalouomega/MACROdoctest.git
 ~~~
 
 ### Building
