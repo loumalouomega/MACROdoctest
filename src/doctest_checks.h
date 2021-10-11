@@ -98,7 +98,7 @@ std::cout << "The string \"" << SubString << "\" was not found in the given stri
 #define DOCTEST_CHECK_NEAR(a,b, tolerance) if(std::abs(a - b) > tolerance) std::cout << COMMON_MESSAGE_CHECK << " because " << #a << " = " << a << \
 " is not near to " << #b << " = " << b << " within the tolerance " << tolerance << std::endl; CHECK(std::abs(a - b) <= tolerance);
 #define DOCTEST_CHECK_RELATIVE_NEAR(a,b, tolerance) if(std::abs(b) > std::numeric_limits<double>::epsilon()) { if(std::abs((a - b)/b) > tolerance) { std::cout << "Check failed because " << #a << " = " << a << \
-" is not near to " << #b << " = " << b << " within the relative tolerance " << tolerance << std::endl;} else {DOCTEST_CHECK_NEAR(a,b,tolerance);};} else { CHECK(std::abs(b) <= std::numeric_limits<double>::epsilon());}
+" is not near to " << #b << " = " << b << " within the relative tolerance " << tolerance << std::endl; CHECK(std::abs((a - b)/b) <= tolerance);} else {DOCTEST_CHECK_NEAR(a,b,tolerance);};} else { CHECK(std::abs(b) <= std::numeric_limits<double>::epsilon());}
 #define DOCTEST_CHECK_DOUBLE_EQUAL(a,b) DOCTEST_CHECK_NEAR(a,b,std::numeric_limits<double>::epsilon())
 
 #define DOCTEST_CHECK_VECTOR_NEAR(a, b, tolerance) {                                           \
